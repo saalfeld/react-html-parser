@@ -13,6 +13,6 @@ export default function HtmlParser(html, {
   transform,
   preprocessNodes = nodes => nodes
 }={}) {
-  const nodes = preprocessNodes(htmlparser2.parseDOM(html, { decodeEntities }));
+  const nodes = preprocessNodes(htmlparser2.parseDOM(html, { decodeEntities, lowerCaseAttributeNames: false }));
   return processNodes(nodes, transform);
 }
